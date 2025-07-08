@@ -1,0 +1,261 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000000; /* Black background as requested */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent body scroll, sidebar will scroll */
+}
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-color: #ffffff; /* Container background remains white for sidebar */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    overflow: hidden; /* Hide overflow for content area */
+}
+.sidebar {
+    width: 240px; /* Standard sidebar width */
+    background-color: #000000; /* Black background for sidebar */
+    border-right: 1px solid #666666; /* Gray border for sidebar */
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Enable scrolling for sidebar content */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+}
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #666666; /* Gray border for sidebar header */
+}
+.sidebar-header .logo-icon {
+    color: #ff0000; /* YouTube red */
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+}
+.sidebar-header .app-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff; /* White text for header on black background */
+}
+.sidebar-section {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #666666; /* Gray border for sidebar sections */
+}
+.sidebar-section:last-child {
+    border-bottom: none; /* No border for the last section */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: #e0e0e0; /* Light gray text for items on black background */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 0.5rem; /* Rounded corners for items */
+    margin: 0 0.5rem; /* Margin to create space for rounded corners */
+}
+.sidebar-item:hover {
+    background-color: #333333; /* Darker hover background on black */
+}
+.sidebar-item.active {
+    background-color: #444444; /* Darker active background on black */
+    color: #ffffff; /* White text for active item */
+    font-weight: 600;
+}
+.sidebar-item-icon {
+    font-size: 1.2rem;
+    width: 24px; /* Fixed width for icons */
+    text-align: center;
+    margin-right: 1rem;
+}
+.sidebar-item-label {
+    flex-grow: 1;
+}
+.sidebar-item-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #1a73e8; /* Blue dot remains */
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+}
+.sidebar-subheader {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: #aaaaaa; /* Lighter gray for subheader on black */
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.sidebar-subheader .arrow-icon {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+}
+.subscription-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: #e0e0e0; /* Light gray text for subscriptions on black */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 0.5rem;
+    margin: 0 0.5rem;
+}
+.subscription-item:hover {
+    background-color: #333333; /* Darker hover background on black */
+}
+.subscription-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #d1d5db; /* Placeholder background */
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+.subscription-name {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Main content area for YoshiTube text and videos */
+.main-content {
+    flex-grow: 1;
+    padding: 1.5rem;
+    padding-top: 10vh; /* Increased top padding to push content down */
+    background-color: #000000; /* Black background for main content */
+    display: flex;
+    justify-content: flex-start; /* Align content to start (top) */
+    align-items: center; /* Center horizontally */
+    flex-direction: column; /* Stack title, tagline, and videos vertically */
+    overflow-y: auto; /* Allow scrolling for main content if needed */
+}
+.yoshitube-text {
+    font-size: 10vw; /* Responsive font size */
+    font-weight: 900; /* Extra bold */
+    color: #ffffff; /* White text */
+    line-height: 1; /* Adjust line height to prevent extra space */
+    letter-spacing: -0.05em; /* Slightly tighter letter spacing */
+    user-select: none; /* Prevent text selection */
+    margin-bottom: 0; /* Remove default bottom margin */
+}
+.yoshitube-tagline {
+    font-size: 1.8vw; /* Increased responsive font size */
+    color: #888888; /* Gray text */
+    margin-top: 0.2rem; /* Small margin from the title */
+    margin-bottom: 6rem; /* Increased space below tagline to push videos down */
+    user-select: none; /* Prevent text selection */
+}
+
+/* Video Grid Styling */
+.video-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 videos per row */
+    gap: 1.5rem; /* Space between videos */
+    width: 100%; /* Take full width of main content */
+    max-width: 900px; /* Limit grid width for better aesthetics */
+    padding-bottom: 1.5rem; /* Padding at the bottom of the grid */
+}
+.video-card {
+    background-color: #1a1a1a; /* Dark background for video cards */
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+}
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.video-thumbnail {
+    width: 100%;
+    height: 160px; /* Fixed height for thumbnails */
+    object-fit: cover;
+    background-color: #333333; /* Placeholder background */
+}
+.video-info {
+    padding: 0.75rem;
+}
+.video-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ffffff; /* White title text */
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.video-channel {
+    font-size: 0.85rem;
+    color: #aaaaaa; /* Lighter gray channel text */
+}
+
+
+/* Message box for alerts */
+.message-box {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+}
+.message-box-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.message-box-button {
+    background-color: #ef4444;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.2s;
+}
+.message-box-button:hover {
+    background-color: #dc2626;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto; /* Allow sidebar to take height it needs */
+        border-right: none;
+        border-bottom: 1px solid #666666; /* Gray border for black background */
+        padding: 0.5rem 0;
+    }
+    .sidebar-header {
+        display: none; /* Hide header on small screens if space is tight

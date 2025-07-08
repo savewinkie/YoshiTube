@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoshiTube - Home</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons (similar to YouTube's icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fab fa-youtube logo-icon"></i>
+                <span class="app-name">YoshiTube</span>
+            </div>
+
+            <div class="sidebar-section">
+                <a href="index.html" class="sidebar-item active">
+                    <i class="fas fa-home sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Home</span>
+                </a>
+                <div class="sidebar-item">
+                    <i class="fas fa-video sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Shorts</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-bookmark sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Abonnementen</span>
+                    <span class="sidebar-item-dot"></span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-music sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">YouTube Music</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-subheader">
+                    Jij <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-history sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Geschiedenis</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-list sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Playlists</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-play-circle sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Je video's</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-clock sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Later bekijken</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-thumbs-up sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Gelikete video's</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-download sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Downloads</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-subheader">
+                    Abonnementen
+                </div>
+                <div class="subscription-item">
+                    <img src="https://placehold.co/28x28/FF5733/FFFFFF?text=ID" alt="iditity avatar" class="subscription-avatar">
+                    <span class="subscription-name">iditity</span>
+                    <span class="sidebar-item-dot"></span>
+                </div>
+                <div class="subscription-item">
+                    <img src="https://placehold.co/28x28/33FF57/FFFFFF?text=VL" alt="Vlariex avatar" class="subscription-avatar">
+                    <span class="subscription-name">Vlariex</span>
+                </div>
+                <div class="subscription-item">
+                    <img src="https://placehold.co/28x28/3357FF/FFFFFF?text=2S" alt="2sa avatar" class="subscription-avatar">
+                    <span class="subscription-name">2sa</span>
+                    <span class="sidebar-item-dot"></span>
+                </div>
+                <div class="subscription-item">
+                    <img src="https://placehold.co/28x28/FF33A1/FFFFFF?text=BR" alt="Breyno avatar" class="subscription-avatar">
+                    <span class="subscription-name">Breyno</span>
+                </div>
+                <div class="subscription-item">
+                    <img src="https://placehold.co/28x28/A133FF/FFFFFF?text=LU" alt="Lucnoxity avatar" class="subscription-avatar">
+                    <span class="subscription-name">Lucnoxity</span>
+                    <span class="sidebar-item-dot"></span>
+                </div>
+                <div class="subscription-item">
+                    <img src="https://placehold.co/28x28/33FFA1/FFFFFF?text=WO" alt="wooshy1x avatar" class="subscription-avatar">
+                    <span class="subscription-name">wooshy1x</span>
+                    <span class="sidebar-item-dot"></span>
+                </div>
+                <div class="subscription-item">
+                    <img src="https://placehold.co/28x28/FF8C33/FFFFFF?text=AW" alt="Alpha White Ga... avatar" class="subscription-avatar">
+                    <span class="subscription-name">Alpha White Ga...</span>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-chevron-down sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Meer tonen</span>
+                </div>
+            </div>
+            
+            <!-- Added navigation links -->
+            <div class="sidebar-section">
+                <a href="about.html" class="sidebar-item">
+                    <i class="fas fa-info-circle sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">About</span>
+                </a>
+                <a href="chat.html" class="sidebar-item">
+                    <i class="fas fa-comments sidebar-item-icon"></i>
+                    <span class="sidebar-item-label">Chat</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <h1 class="yoshitube-text">YoshiTube</h1>
+            <p class="yoshitube-tagline">where joy becomes something bigger</p>
+
+            <div id="video-grid" class="video-grid-container">
+                <!-- Video cards will be dynamically added here by script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Box for alerts (kept for consistency) -->
+    <div id="message-box-overlay" class="message-box-overlay"></div>
+    <div id="message-box" class="message-box">
+        <p id="message-box-text"></p>
+        <button id="message-box-ok" class="message-box-button">OK</button>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
